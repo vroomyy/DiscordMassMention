@@ -30,7 +30,7 @@ setInterval(function()
        memberList[index] = subjNameTemp;
       }
 
-    var getRandomSubjectName = memberList.slice(0, amount).forEach(member => {
+    memberList.slice(0, amount).forEach(member => {
                 users += `<@${member.userId}>`
     });
     FindModule("sendMessage").sendMessage(channelid, {content: `${users} ${message}`});
