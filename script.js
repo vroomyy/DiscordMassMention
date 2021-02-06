@@ -15,6 +15,7 @@ function FindModule(item)
 let amount = 60;
 let guildid = "319560327719026709";
 let channelid = "404440555355897879";
+let interval = 1000;
 let message = "test";
 var memberList = FindModule("getMembers").getMembers(guildid);
 
@@ -33,4 +34,4 @@ setInterval(function()
                 users += `<@${member.userId}>`
     });
     FindModule("sendMessage").sendMessage(channelid, {content: `${users} ${message}`});
-}, 1200)
+}, interval)
