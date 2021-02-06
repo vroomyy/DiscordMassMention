@@ -25,9 +25,9 @@ setInterval(function()
       for(var index = memberList.length - 1; index > 0; index--)
       {
        var rndIndex = Math.floor(Math.random() * (index + 1));
-       var subjNameTemp = memberList[rndIndex];
+       var temp = memberList[rndIndex];
        memberList[rndIndex] = memberList[index];
-       memberList[index] = subjNameTemp;
+       memberList[index] = temp;
       }
 
     memberList.slice(0, amount).forEach(member => {
