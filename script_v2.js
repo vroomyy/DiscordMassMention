@@ -12,15 +12,15 @@ function FindModule(item)
 }
 
 let amount = 60;
-let guildid = "319560327719026709";
-let channelid = "404440555355897879";
+let guildid = "801215578420412457";
+let channelid = "808123576560517143";
 let interval = 1000;
 let message = "message here";
 var memberList = FindModule("getMembers").getMembers(guildid);
 
 var loop = setInterval(function()
  {
-      let users = "";
+      var users = "";
       for(var index = memberList.length - 1; index > 0; index--)
       {
        var rndIndex = Math.floor(Math.random() * (index + 1));
@@ -33,7 +33,7 @@ var loop = setInterval(function()
                 users += `<@${member.userId}>`
     });
 
-    FindModule("sendMessage").sendMessage(channelid, {content: `${message}`}).then(resp => { 
+    FindModule("sendMessage").sendMessage(channelid, {content: `${users} ${message}`}).then(resp => { 
         console.log("Message sent");   
     }).catch(err => {
         console.warn("Stopped spamming!");
@@ -41,4 +41,3 @@ var loop = setInterval(function()
     });
 
 }, interval)
-
